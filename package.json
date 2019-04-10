@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.4",
+    "compression": "^1.7.4",
     "config": "^3.0.1",
     "cookie-parser": "^1.4.4",
     "crypto": "^1.0.1",
@@ -22,7 +23,9 @@
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.8"
+    "mongoose": "^5.4.8",
+    "winston": "^2.4.4",
+    "winston-mongodb": "^5.0.0"
   },
   "devDependencies": {
     "jest": "^24.0.0",

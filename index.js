@@ -1,18 +1,18 @@
 const express = require('express');
-const helmet = require('helmet');
+const winston = require('winston');
 const app = express();
 
-app.use(helmet());
-
+require('./startup/logging')();
 require('./startup/routes')(app);
 require('./startup/dbInit')();
 require('./startup/validate')();
 require('./startup/config')();
+require('./startup/prod')(app);
 // require('./startup/rateLimiter')(app);
 
 const port = process.env.PORT || 3000;
 
-const server = app.listen(port, () => console.log(`Listening on port ${port}`));
+const server = app.listen(port, () => winston.info(`Listening on port ${port}`));
 
 
 module.exports = server;
